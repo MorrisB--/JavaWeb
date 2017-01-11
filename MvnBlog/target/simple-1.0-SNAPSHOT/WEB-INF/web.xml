@@ -6,14 +6,5 @@
            version="3.0">
 
 
-  <servlet>
-      <servlet-name>Simple</servlet-name>
-      <servlet-class>com.mantiso.SimpleServlet</servlet-class>
-  </servlet>
-
-    <servlet-mapping>
-        <servlet-name>Simple</servlet-name>
-        <url-pattern>*.do</url-pattern>
-    </servlet-mapping>
 
 </web-app>
