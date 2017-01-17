@@ -26,5 +26,17 @@ public class SimpleServlet extends HttpServlet {
 		else
 			resp.getWriter().write("Please enter a name");
 	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// param names are case sensitive
+		String name = req.getParameter("name");
+		// resp.getWriter().write("Hello World Test");
+		
+		if (name != null && !name.isEmpty())
+			resp.getWriter().printf("Hello %s", name);
+		else
+			resp.sendRedirect("index.jsp");
+	}
 
 }
