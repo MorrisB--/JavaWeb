@@ -9,7 +9,6 @@
 		<servlet-class>com.mantiso.SimpleServlet</servlet-class>
 	</servlet>
 
-
 	<!-- MUST UNDEPLOY AND REDEPLOY FOR NEW MAPPINGS TO WORK -->
 	<servlet-mapping>
 		<servlet-name>simple-1.0-SNAPSHOT</servlet-name>
