@@ -10,29 +10,32 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = { "/home", "*.dot" })
 public class SimpleServlet extends HttpServlet {
+	String appName = "My Application";
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// param names are case sensitive
 		String name = req.getParameter("name");
 		// resp.getWriter().write("Hello World Test");
-		
+
 		/*
-		 * If statement will be true using 
-		 * http://localhost:8080/simple-1.0-SNAPSHOT/home?name=Morris 
+		 * If statement will be true using
+		 * http://localhost:8080/simple-1.0-SNAPSHOT/home?name=Morris
 		 */
-		if (name != null)
-			resp.getWriter().printf("Hello %s", name);
-		else
+		if (name != null) {
+			resp.setContentType("text/xml");
+			resp.getWriter().printf("<application> <name>Hello %s</name> <product>%s</product> </application>", name,
+					appName);
+		} else
 			resp.getWriter().write("Please enter a name");
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// param names are case sensitive
 		String name = req.getParameter("name");
 		// resp.getWriter().write("Hello World Test");
-		
+
 		if (name != null && !name.isEmpty())
 			resp.getWriter().printf("Hello %s", name);
 		else
