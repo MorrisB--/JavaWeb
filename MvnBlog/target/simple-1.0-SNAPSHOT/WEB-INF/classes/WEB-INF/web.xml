@@ -7,12 +7,25 @@
 	<servlet>
 		<servlet-name>simple-1.0-SNAPSHOT</servlet-name>
 		<servlet-class>com.mantiso.SimpleServlet</servlet-class>
+		<init-param>
+			<param-name>ProductName</param-name>
+			<param-value>A different server=...2</param-value>
+		</init-param>
 	</servlet>
 
 	<!-- MUST UNDEPLOY AND REDEPLOY FOR NEW MAPPINGS TO WORK -->
 	<servlet-mapping>
 		<servlet-name>simple-1.0-SNAPSHOT</servlet-name>
 		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+	<!-- <servlet> -->
+	<!-- <servlet-name>simple-1.0-SNAPSHOT</servlet-name> --><!-- May need to use simple-1.0-SNAPSHOT -->
+	<!-- <servlet-class>com.mantiso.SimpleServlet</servlet-class> </servlet> -->
+
+	<servlet-mapping>
+		<servlet-name>simple-1.0-SNAPSHOT</servlet-name>
+		<url-pattern>/misc</url-pattern>
 	</servlet-mapping>
 
 </web-app>
