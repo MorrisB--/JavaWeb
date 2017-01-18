@@ -16,7 +16,7 @@ public class SimpleServlet extends HttpServlet {
 
 	@Override
 	public void init() throws ServletException {
-		appName = getInitParameter("ProductName");
+		appName = getServletContext().getInitParameter("ProductName");
 	}
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
