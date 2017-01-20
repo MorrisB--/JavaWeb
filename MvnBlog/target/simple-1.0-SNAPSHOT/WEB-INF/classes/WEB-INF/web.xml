@@ -4,11 +4,18 @@
 		  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
 
+	<context-param>
+		<param-name>ProductName</param-name>
+		<param-value>Servlet Context product name</param-value>
+	</context-param>
+
 	<servlet>
 		<servlet-name>simple-1.0-SNAPSHOT</servlet-name>
 		<servlet-class>com.mantiso.SimpleServlet</servlet-class>
 		<init-param>
 			<param-name>ProductName</param-name>
+
+			<!-- This will only be seen on *.do pages due to the mapping below -->
 			<param-value>A different server=...2</param-value>
 		</init-param>
 	</servlet>
