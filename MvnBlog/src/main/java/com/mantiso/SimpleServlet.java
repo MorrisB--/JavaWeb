@@ -32,8 +32,10 @@ public class SimpleServlet extends HttpServlet {
 			resp.setContentType("text/xml");
 			resp.getWriter().printf("<application> <name>Hello %s</name> <product>%s</product> </application>", name,
 					appName);
-		} else
-			resp.getWriter().write("Please enter a name");
+		} else {
+			//resp.getWriter().write("Please enter a name");
+			throw new ServletException("A name should be entered.");
+		}
 	}
 
 	@Override

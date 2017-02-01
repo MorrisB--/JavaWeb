@@ -34,5 +34,7 @@
 		<servlet-name>simple-1.0-SNAPSHOT</servlet-name>
 		<url-pattern>/misc</url-pattern>
 	</servlet-mapping>
+	
+	<error-page><location>/errorpage.jsp</location></error-page>
 
 </web-app>
