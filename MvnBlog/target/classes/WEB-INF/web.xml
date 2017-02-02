@@ -46,7 +46,7 @@
 	</servlet-mapping>
 
 	<error-page>
-		<location>/errorpage.jsp</location>
+		<location>/WEB-INF/errorpage.jsp</location>
 	</error-page>
 
 </web-app>
