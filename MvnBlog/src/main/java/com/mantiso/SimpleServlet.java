@@ -18,6 +18,7 @@ public class SimpleServlet extends HttpServlet {
 	public void init() throws ServletException {
 		appName = getServletContext().getInitParameter("ProductName");
 	}
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// param names are case sensitive
@@ -32,8 +33,10 @@ public class SimpleServlet extends HttpServlet {
 			resp.setContentType("text/xml");
 			resp.getWriter().printf("<application> <name>Hello %s</name> <product>%s</product> </application>", name,
 					appName);
-		} else
-			resp.getWriter().write("Please enter a name");
+		} else {
+			// resp.getWriter().write("Please enter a name");
+			throw new ServletException("A name should be entered.");
+		}
 	}
 
 	@Override
